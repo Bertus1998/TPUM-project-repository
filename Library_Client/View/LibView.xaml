@@ -1,0 +1,28 @@
+﻿<Window x:Class="Library_Client.View.LibView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Client.View"
+        mc:Ignorable="d"
+        Title="Books to borrow" Height="800" Width="800">
+    <Grid Background="LightGray" Margin="0,0,-0.4,0" Height="770" VerticalAlignment="Top">
+        <TextBlock Text="LibOn" FontSize="40" 
+                           Width="117" FontWeight="Black" HorizontalAlignment="Center" Margin="352,10,325,692"
+                           />
+        <Grid Background="Wheat" Margin="10,83,10,31">
+            <Border BorderBrush="DarkRed" CornerRadius="16" Padding="20" BorderThickness="35" 
+                    Margin="0,-25,-0.4,-20.4" RenderTransformOrigin="0.504,0.53" 
+                    Height="701" VerticalAlignment="Bottom"/>
+
+        </Grid>
+        <TextBlock FontSize="28" 
+                           Width="606" FontWeight="Black" HorizontalAlignment="Center" Margin="118,100,70,590"
+                           ><Run Text="Find your story, inspiration and knowledge. "/><LineBreak/><Run Text="&#x9;"/><Run Text="         "/><Run Text="Find your book."/></TextBlock>
+        <Button Margin="250,551,250,168" BorderBrush="WhiteSmoke" BorderThickness="5" Background="BurlyWood" FontWeight="DemiBold" FontSize="28">Borrow this precious</Button>
+        <Button Margin="150,609,400,110" BorderBrush="WhiteSmoke" BorderThickness="5" Background="BurlyWood" FontWeight="DemiBold" FontSize="28" RenderTransformOrigin="0.502,0.5">My books</Button>
+        <Button Margin="400,609,150,109" BorderBrush="WhiteSmoke" BorderThickness="5" Background="BurlyWood" FontWeight="DemiBold" FontSize="28" RenderTransformOrigin="0.502,0.5">Log out</Button>
+        <Button Margin="360,666,360,58" BorderBrush="OrangeRed" BorderThickness="5" Background="Red" FontWeight="DemiBold" FontSize="28" RenderTransformOrigin="0.502,0.5">Exit</Button>
+
+    </Grid>
+</Window>
