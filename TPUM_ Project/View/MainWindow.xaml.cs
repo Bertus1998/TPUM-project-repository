@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Client.View
+namespace View
 {
     /// <summary>
-    /// Logika interakcji dla klasy UserControl1.xaml
+    /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class MainWindow : Window
     {
-        public UserControl1()
+        public MainWindow()
         {
             InitializeComponent();
         }
