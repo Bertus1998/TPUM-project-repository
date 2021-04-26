@@ -1,4 +1,5 @@
 ﻿
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace ViewModel.Commands
         MainWindowViewModel mainWindowViewModel;
         public override void Execute(object parameter)
         {
-            mainWindowViewModel.OnExecuteDecreaseMax();
+
+            mainWindowViewModel.model.deacreaseMaxTemp();
         }
        public DecreaseMaxTemp(MainWindowViewModel mainWindowViewModel)
         {

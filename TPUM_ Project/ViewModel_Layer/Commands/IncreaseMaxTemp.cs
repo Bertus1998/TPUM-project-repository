@@ -14,7 +14,7 @@ namespace ViewModel.Commands
         MainWindowViewModel mainWindowViewModel;
         public override void Execute(object parameter)
         {
-            mainWindowViewModel.OnExecuteIncreaseMax();
+            mainWindowViewModel.model.increaseMaxTemp();
         }
         public IncreaseMaxTemp(MainWindowViewModel mainWindowViewModel)
         {

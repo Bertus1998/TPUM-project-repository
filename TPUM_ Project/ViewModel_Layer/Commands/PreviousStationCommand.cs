@@ -1,24 +1,23 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using ViewModel;
+using ViewModel.Commands;
 
 namespace ViewModel.Commands
 {
-    public class RemoveCommand : BaseCommand
+    class PreviousStationCommand : BaseCommand
     {
         MainWindowViewModel mainWindowViewModel;
         public override void Execute(object parameter)
         {
-            mainWindowViewModel.model.removeStation();
+            this.mainWindowViewModel.model.previousStation();
         }
-        public RemoveCommand(MainWindowViewModel mainWindow)
+       public PreviousStationCommand(MainWindowViewModel windowViewModel)
         {
-            this.mainWindowViewModel = mainWindow;
+            this.mainWindowViewModel = windowViewModel;
         }
     }
 }

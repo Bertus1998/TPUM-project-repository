@@ -47,6 +47,8 @@
     <Compile Include="Commands\DecreaseTemperatureCommand.cs" />
     <Compile Include="Commands\IncreaseMaxTemp.cs" />
     <Compile Include="Commands\IncreaseTemperatureCommand.cs" />
+    <Compile Include="Commands\NextStationCommand.cs" />
+    <Compile Include="Commands\PreviousStationCommand.cs" />
     <Compile Include="Commands\RemoveCommand.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

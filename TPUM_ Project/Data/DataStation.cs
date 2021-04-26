@@ -1,5 +1,4 @@
-﻿using Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -8,11 +7,11 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace Data
 {
-    public abstract class IStation: INotifyPropertyChanged
+    public abstract class DataStation : INotifyPropertyChanged
     {
-       
+
         public event PropertyChangedEventHandler PropertyChanged = (IChannelSender, e) => { };
         private bool heat;
         private string name;
@@ -57,7 +56,7 @@ namespace Model
             get { return nowTemp; }
             set
             {
-                if(NowTemp>TargetTemp)
+                if (NowTemp > TargetTemp)
                 {
                     heat = false;
                 }
@@ -70,9 +69,19 @@ namespace Model
             }
         }
         private float nowTemp;
-        public static IStation createStation(float targetTemp, float currentTemp, String name)
+        public abstract void simulateTemp(int MaxHeat);
+        public static List<DataStation>  GetStations(int number)
+         {
+          List<DataStation> listStations = new List<DataStation>();
+                   for(int i =0;i<number;i++)
+                 {
+                    listStations.Add(new Station(i.ToString()));
+                  }
+             return listStations;
+        }
+        public static DataStation createStation(String name)
         {
-            return new Station(targetTemp, currentTemp, name);
+            return new Station(name);
         }
     }
 }

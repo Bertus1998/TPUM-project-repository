@@ -36,39 +36,44 @@
                 <Button CommandParameter="{Binding ElementName=name,Path=Text}" Command="{Binding Source={StaticResource vm},Path=AddStation}" Height="100" Width="200" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">Add new sensor</Button>
                 <TextBlock Margin="4" FontSize="24" Foreground="white"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1"> Max temperature:</TextBlock>
 
-                <TextBlock Margin="4" FontSize="24" Foreground="white"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Text="{Binding Source={StaticResource vm}, Path=MaxHeat}"/>
+                <TextBlock  DataContext="{Binding Source={StaticResource vm}, Path= Model}" Margin="4" FontSize="24" Foreground="white"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Text="{Binding Path=MaxHeat}"/>
                 <Button  Command="{Binding Source={StaticResource vm},Path=IncreaseMaxTemp}" Width="120" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="Red" Grid.Row="4" Grid.Column="2" >Increase max temp</Button>
                 <Button Command="{Binding Source={StaticResource vm},Path=DecreaseMaxTemp}" Width="120" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="Blue" Grid.Row="4" Grid.Column="0" >Decrease max temp</Button>
-
+           
             </Grid>
             <Grid>
 
             </Grid>
         </StackPanel>
         <ScrollViewer  Background="Gray" Margin="0,260,0,0" VerticalScrollBarVisibility="Auto"
-            HorizontalScrollBarVisibility="Auto"  DataContext="{Binding Source={StaticResource vm}}">
-            <ItemsControl ItemsSource="{Binding Source={StaticResource vm}, Path=ListOfStations}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="4"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border Margin ="10" BorderThickness="4" Background="Wheat" BorderBrush="Brown">
-                            <StackPanel  Margin="10"  Width="220" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                                <TextBlock FontSize="16" FontWeight="DemiBold" Margin="4" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Name,Mode=TwoWay, StringFormat='Name of sensor:  {0}'}"/>
-                                <TextBlock FontSize="15" FontWeight="DemiBold" Margin="4" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=NowTemp,Mode=TwoWay, StringFormat='Current temperature:  {0}'}"/>
-                                <TextBlock FontSize="15" FontWeight="DemiBold" Margin="4" TextAlignment="Center" Text="{Binding Path=TargetTemp,Mode=TwoWay, StringFormat='Target temperature:  {0}'}"/>
-                                <Button CommandParameter="{Binding }" Command="{Binding Source={StaticResource vm},Path=IncreaseTemp}"  Margin="4" FontSize="20" Foreground="white" Background="DarkRed">+</Button>
-                                <Button CommandParameter="{Binding }" Command="{Binding Source={StaticResource vm},Path=DecreaseTemp}"  Margin="4" FontSize="20" Foreground="white"  Background="DarkBlue">-</Button>
-                                <Button CommandParameter="{Binding }" Command="{Binding Source={StaticResource vm},Path=RemoveStation}" Margin="4" FontSize="20" Foreground="white"  Background="DarkSlateGray">Remove</Button>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-
+                       
+            HorizontalScrollBarVisibility="Auto"  DataContext="{Binding Source={StaticResource vm}, Path= Model}">
+            <Border Margin ="10" BorderThickness="4" Background="Wheat" BorderBrush="Brown" DataContext="{Binding Path= Station}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Button  Command="{Binding Source={StaticResource vm},Path=PreviousStation}" Background="SlateGray" FontSize="40" Foreground="white" Content="Previous" Height="222"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="10"  Width="234" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                        <TextBlock FontSize="16" FontWeight="DemiBold" Margin="4" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Name,Mode=TwoWay}"/>
+                        <TextBlock FontSize="15" FontWeight="DemiBold" Margin="4" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=NowTemp,Mode=TwoWay, StringFormat='Current temperature:  {0}'}"/>
+                        <TextBlock FontSize="15" FontWeight="DemiBold" Margin="4" TextAlignment="Center" Text="{Binding Path=TargetTemp,Mode=TwoWay, StringFormat='Target temperature:  {0}'}"/>
+                        <Button CommandParameter="{Binding }" Command="{Binding Source={StaticResource vm},Path=IncreaseTemp}"  Margin="4" FontSize="20" Foreground="white" Background="DarkRed">+</Button>
+                        <Button CommandParameter="{Binding }" Command="{Binding Source={StaticResource vm},Path=DecreaseTemp}"  Margin="4" FontSize="20" Foreground="white"  Background="DarkBlue">-</Button>
+                        <Button CommandParameter="{Binding }" Command="{Binding Source={StaticResource vm},Path=RemoveStation}" Margin="4" FontSize="20" Foreground="white"  Background="DarkSlateGray">Remove</Button>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Button Background="SlateGray" Command="{Binding Source={StaticResource vm},Path=NextStation}"  FontSize="40" Foreground="white"  Content="Next" Height="222"/>
+                    </StackPanel>
+                </Grid>
+               
+                
+            </Border>
+            
         </ScrollViewer>
 
     </Grid>

@@ -17,7 +17,7 @@ namespace ViewModel.Commands
 
         public override void Execute(object parameter)
         {
-            mainWindowViewModel.OnExecuteIncrease(parameter);
+            mainWindowViewModel.model.increaseTemp();
         }
        public  IncreaseTemperatureCommand(MainWindowViewModel mainWindowViewModel)
         {

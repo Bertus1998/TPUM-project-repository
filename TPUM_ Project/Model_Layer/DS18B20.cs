@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class DS18B20 : Sensor
+     internal class DS18B20 : Sensor
     {
        
         public float CurrentTemp {

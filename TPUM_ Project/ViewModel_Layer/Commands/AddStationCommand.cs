@@ -18,7 +18,7 @@ namespace ViewModel.Commands
         }
         public override void Execute(object parameter)
         {
-            mainWindowViewModel.OnExecuteAddStation(parameter);
+            mainWindowViewModel.model.addStation((String)parameter);
         }
 
        
