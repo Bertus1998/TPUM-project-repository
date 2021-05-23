@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Data_Server
 {
-    public abstract class DataStation : INotifyPropertyChanged
+    public abstract class DataStation : INotifyPropertyChanged, IObservable<DataStation>
     {
-
 
         public event PropertyChangedEventHandler PropertyChanged = (IChannelSender, e) => { };
         private bool heat;
@@ -27,8 +25,6 @@ namespace Data
 
             }
         }
-
-     
         public string Name
         {
             get
@@ -57,8 +53,7 @@ namespace Data
         private float targetTemp;
         public float NowTemp
         {
-            get { return nowTemp; 
-            }
+            get { return nowTemp; }
             set
             {
                 if (NowTemp > TargetTemp)
@@ -74,8 +69,24 @@ namespace Data
             }
         }
         private float nowTemp;
-     
-    
-     
+        public abstract void simulateTemp(int MaxHeat);
+        public static List<DataStation>  GetStations(int number)
+         {
+          List<DataStation> listStations = new List<DataStation>();
+                   for(int i =0;i<number;i++)
+                 {
+                    listStations.Add(new Station(i.ToString()));
+                  }
+             return listStations;
+        }
+        public static  DataStation createStation(String name)
+        {
+            return new Station(name);
+        }
+
+        public IDisposable Subscribe(IObserver<DataStation> observer)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

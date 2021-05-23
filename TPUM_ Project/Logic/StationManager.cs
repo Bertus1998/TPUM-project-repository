@@ -9,126 +9,69 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    internal class StationManager: AStationManager
+    internal class StationManager: AStationManager, INotifyPropertyChanged
     {
-        List<Thread> threads = new List<Thread>();
-       public StationManager()
+        protected DataStation dataStation;
+        public event PropertyChangedEventHandler PropertyChanged = (IChannelSender, e) => { };
+        public DataStation DataStation
         {
-            this.MaxHeat = 35;
-            this.stations = DataStation.GetStations(10);
-            foreach(DataStation station in stations)
-            {
-                Thread tempThread = new Thread(() => simulation(station));
-                threads.Add(tempThread);
-                tempThread.Start();
+            get { return dataStation; }
+            set { dataStation = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("DataStation"));
             }
         }
-       public StationManager(List<DataStation> dataStations)
+        public StationManager()
         {
-            this.MaxHeat = 35;
-            this.stations = dataStations;
-            foreach (DataStation station in stations)
-            {
-                Thread tempThread = new Thread(() => simulation(station));
-                threads.Add(tempThread);
-                tempThread.Start();
-            }
+          
+            dataManager = new DataManager();
         }
-     
-        private List<DataStation> stations;
 
-       
-
-        public List<DataStation> Stations
+        public override int getMaxTemp()
         {
-            get { return stations; }
-            set { stations = value; }
+            return dataManager.MaxHeat;
+        }
+
+        public override void IncreaseTargetTemp()
+        {
+            dataManager.increaseTargetTempAsync();
+
+        }
+
+        public override void DeleteStation()
+        {
+            dataManager.deleteStationAsync();
         }
 
         public override void AddStation(string name)
         {
-            bool was = false;
-            foreach(DataStation  station in Stations)
-            {
-               if(name == station.Name)
-                {
-                    was = true;
-                }
-            }
-            if(!was)
-            {
-            DataStation dataStation = DataStation.createStation(name);
-            Thread tempThread = new Thread(() => simulation(dataStation));
-            threads.Add(tempThread);
-            tempThread.Start();
-            stations.Add(dataStation);
-            }
+            dataManager.AddStationAsync(name);
         }
 
-        public override void DecreaseTargetTemp(int number)
+        public override void getPreviousStation()
         {
-            if (number >= 0)
-            {
-                stations[number].TargetTemp -= 1;
-            }
-        }
-
-        public override void DeleteStation(int number)
-        {
-            if(number>=0&&number<stationCount())
-            {
-                Stations.RemoveAt(number);
-                threads[number].Abort();
-                threads.RemoveAt(number);
-            }
-        
-        }
-
-        public override string[] getStation(int numer)
-        {
-            if(numer>= stations.Count||numer<0)
-            {
-                return null;
-            }
-            else
-            {
-                string[] parameters = { stations[numer].Name, stations[numer].NowTemp.ToString(), stations[numer].TargetTemp.ToString() };
-                return parameters;
-            }
-      
-            
-        }
-
-        public override void IncreaseTargetTemp(int number)
-        {
-            if (number >= 0)
-            {
-                stations[number].TargetTemp += 1;
-            }
+          dataManager.getPreviousStationAsync();
         }
 
         public override void IncreaseMaxTemp()
         {
-            this.MaxHeat += 1;
+            dataManager.IncreseMaxTempAsync();
+        }
+
+        public override void getNextStation()
+        {
+            dataManager.getNextStationAsync();
         }
 
         public override void DecreaseMaxTemp()
         {
-            this.MaxHeat -= 1;
-        }
-        public void  simulation(DataStation station)
-        {
-            while(true)
-            {
-                Thread.Sleep(1500);
-                station.simulateTemp(this.MaxHeat);
-            }
+            
+            dataManager.decreaseMaxTempAsync();
         }
 
-        public override int stationCount()
+        public override void DecreaseTargetTemp()
         {
-
-            return stations.Count;
+           
+            dataManager.decreaseTargetTempAsync();
         }
     }
 }

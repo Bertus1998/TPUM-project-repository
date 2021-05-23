@@ -13,20 +13,11 @@ namespace Data
             NowTemp = 20f;
             Name = name;          
         }
-        public override void simulateTemp(int MaxTemp)
+        public Station(String name, float TargetTemp, float NowTemp)
         {
-            if(NowTemp>MaxTemp)
-            {
-                TargetTemp = MaxTemp;
-            }
-            if (Heat)
-            {
-                NowTemp += 0.1f;
-            }
-            else
-            {
-                NowTemp -= 0.1f;
-            }
+            this.TargetTemp = TargetTemp;
+            this.NowTemp = NowTemp;
+            this.Name = name;
         }
     }
 }

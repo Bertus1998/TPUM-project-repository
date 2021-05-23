@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Data;
+using Data_Server;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 
-namespace DataUnitTest
+namespace Server_Data_Unit_Tests
 {
     [TestClass]
-    public class DataStationUnitTests
+    public class ServerDataUnitTests
     {
         [TestMethod]
         public void GetStationTest()
@@ -14,7 +14,7 @@ namespace DataUnitTest
             //Arrange
             int count = 10;
             //Act  
-            List<DataStation> dataStations = DataStation.GetStationsAsync(count);
+            List<DataStation> dataStations = DataStation.GetStations(10);
             //Assert
             Assert.AreEqual(dataStations.Count, count);
         }
@@ -24,7 +24,7 @@ namespace DataUnitTest
             //Arrange
             String name = "Station";
             //Act
-           DataStation data = DataStation.createStation(name);
+            DataStation data = DataStation.createStation(name);
             //Assert
             Assert.AreEqual(data.Name, name);
         }

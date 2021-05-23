@@ -1,15 +1,13 @@
-﻿using Data;
+﻿using Data_Server;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace LogicUnitTests
+namespace Server_Logic_Unit_Tests
 {
     class TestStation : DataStation
     {
-        
+
         TestStation(String name)
         {
             this.Name = name;
@@ -23,11 +21,16 @@ namespace LogicUnitTests
         static List<DataStation> depenedenyInject(int number)
         {
             List<DataStation> dataStations = new List<DataStation>();
-            for(int i =0; i <number;i++)
+            for (int i = 0; i < number; i++)
             {
                 dataStations.Add(new TestStation(i.ToString()));
             }
             return dataStations;
+        }
+
+        public override void simulateTemp(int MaxHeat)
+        {
+            throw new NotImplementedException();
         }
     }
 }
