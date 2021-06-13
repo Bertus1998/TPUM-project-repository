@@ -210,18 +210,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeGenGlobal.cs" />
-    <Compile Include="CodeGenMain.cs" />
-    <Compile Include="CodeGenMethodHandler.cs" />
-    <Compile Include="CodeGenMethodTypeBase.cs" />
-    <Compile Include="CodeGenNodeBase.cs" />
-    <Compile Include="CodeGenNodeFactory.cs" />
-    <Compile Include="CodeGenNodeManager.cs" />
-    <Compile Include="CodeGenObjectTypeBase.cs" />
-    <Compile Include="CodeGenReadWriteHandler.cs" />
-    <Compile Include="CodeGenServer.cs" />
-    <Compile Include="CodeGenServerConfiguration.cs" />
-    <Compile Include="CodeGenVariableTypeBase.cs" />
     <Compile Include="Commands\AddStationCommand.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\DecreaseMaxTemp.cs" />
@@ -233,11 +221,6 @@
     <Compile Include="Commands\RemoveCommand.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="type_ObjectType_Station_468461068_0.cs" />
-    <Compile Include="type_VariableType_Heat_2031185702_0.cs" />
-    <Compile Include="type_VariableType_Name_420871476_0.cs" />
-    <Compile Include="type_VariableType_NowTemp_1652098010_0.cs" />
-    <Compile Include="type_VariableType_TargetTemp_1537019957_0.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model_Layer\Model.csproj">
@@ -247,11 +230,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="CodeGenProject.csproj" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeGenServer.Config.xml" />
     <Content Include="project_nodeset.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
