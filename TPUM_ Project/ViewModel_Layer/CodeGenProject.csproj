@@ -1,0 +1,32 @@
+<!-- 
+UMX Code Generated
+
+NOTE: THIS FILE CONTAINS AUTO GENERATED SOURCE CODE.
+      ANY MANUAL CHANGES TO THIS FILE WILL BE OVERWRITTEN IF THE CODE GENERATOR IS RE-EXECUTED.
+--> 
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    
+	
+	
+	
+	
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="project_nodeset.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+	<None Update="CodeGenServer.Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
