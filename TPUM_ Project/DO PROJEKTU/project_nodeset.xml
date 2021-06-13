@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><UANodeSet xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <NamespaceUris>
+        <Uri>ModelStation</Uri>
+    </NamespaceUris>
+    <UAVariable AccessLevel="111" BrowseName="1:Heat" DataType="i=1" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;i=26810" ValueRank="-2" WriteMask="0">
+        <DisplayName>Heat</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=30021</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+        <Value>
+            <Boolean>true</Boolean>
+        </Value>
+    </UAVariable>
+    <UAVariable AccessLevel="1" BrowseName="1:NowTemp" DataType="i=10" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;i=16599" ValueRank="-1" WriteMask="0">
+        <DisplayName>NowTemp</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=30021</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+        <Value>
+            <Float>20.000000</Float>
+        </Value>
+    </UAVariable>
+    <UAVariable AccessLevel="1" BrowseName="1:TargetTemp" DataType="i=10" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;i=29520" ValueRank="-1" WriteMask="0">
+        <DisplayName>TargetTemp</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=30021</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+        <Value>
+            <Float>0.000000</Float>
+        </Value>
+    </UAVariable>
+    <UAObjectType BrowseName="1:Station" IsAbstract="false" NodeId="ns=1;s=30021" WriteMask="0">
+        <DisplayName>Station</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=45">i=58</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;i=29520</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;s=9837</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;i=26810</Reference>
+            <Reference IsForward="true" ReferenceType="i=47">ns=1;i=16599</Reference>
+        </References>
+    </UAObjectType>
+    <UAVariable AccessLevel="111" BrowseName="1:Name" DataType="i=12" Historizing="0" MinimumSamplingInterval="0.000000" NodeId="ns=1;s=9837" ValueRank="-2" WriteMask="0">
+        <DisplayName>Name</DisplayName>
+        <References>
+            <Reference IsForward="false" ReferenceType="i=47">ns=1;s=30021</Reference>
+            <Reference IsForward="true" ReferenceType="i=40">i=63</Reference>
+        </References>
+        <Value>
+            <String>XD</String>
+        </Value>
+    </UAVariable>
+</UANodeSet>

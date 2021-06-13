@@ -1,0 +1,14 @@
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\obj\Release\netcoreapp2.1\CodeGenProject.csprojAssemblyReference.cache
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\obj\Release\netcoreapp2.1\CodeGenProject.csproj.CoreCompileInputs.cache
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\obj\Release\netcoreapp2.1\CodeGenProject.AssemblyInfoInputs.cache
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\obj\Release\netcoreapp2.1\CodeGenProject.AssemblyInfo.cs
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\bin\Release\netcoreapp2.1\CodeGenServer.Config.xml
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\bin\Release\netcoreapp2.1\project_nodeset.xml
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\bin\Release\netcoreapp2.1\CodeGenProject.deps.json
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\bin\Release\netcoreapp2.1\CodeGenProject.runtimeconfig.json
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\bin\Release\netcoreapp2.1\CodeGenProject.runtimeconfig.dev.json
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\bin\Release\netcoreapp2.1\CodeGenProject.dll
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\obj\Release\netcoreapp2.1\CodeGenProject.genruntimeconfig.cache
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\bin\Release\netcoreapp2.1\CodeGenProject.pdb
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\obj\Release\netcoreapp2.1\CodeGenProject.dll
+C:\Users\Dominik\Desktop\xd\Projekt\DO PROJEKTU\obj\Release\netcoreapp2.1\CodeGenProject.pdb
